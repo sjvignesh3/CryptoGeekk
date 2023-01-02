@@ -1,9 +1,10 @@
 import React from 'react'
 import { useGetCryptosQuery } from '../services/cryptoApi'
 import { useState,useEffect } from 'react';
-import { Card, Col, Row } from 'antd';
+import { Card, Col, Row, Input } from 'antd';
 import { Link } from 'react-router-dom';
 import millify from 'millify'
+import Loader from './Loader';
 
 const Cryptocurrencies = ( {simplified} ) => {
   const count = simplified? 10 : 100;
@@ -16,13 +17,13 @@ const Cryptocurrencies = ( {simplified} ) => {
     setCryptos(filteredData);
   },[searchItem]);
 
-  if(isFetching) return 'Loading....'
+  if(isFetching) return <Loader/>;
 
   return (
     <>
       {!simplified && (
         <div className='search-crypto'>
-        <input placeholder='Search Cryptocurrency' onChange={(e) => setSearchItem(e.target.value)}></input> 
+        <Input placeholder='Search Cryptocurrency' onChange={(e) => setSearchItem(e.target.value)}></Input> 
         </div>
       )}
    
@@ -30,7 +31,6 @@ const Cryptocurrencies = ( {simplified} ) => {
         {cryptos?.map((currency) => (
           <Col xs={24} sm={12} lg={6} className='crypto-card' key={currency.uuid}>
             <Link to={`/crypto/${currency.uuid}`}>
-            <h1>{currency.id}</h1>
               <Card 
                   title={`${currency.rank}. ${currency.name}`}
                   extra={<img className='crypto-image' src={currency.iconUrl}/>}

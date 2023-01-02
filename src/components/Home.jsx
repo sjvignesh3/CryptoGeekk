@@ -4,15 +4,16 @@ import { useGetCryptosQuery } from '../services/cryptoApi';
 import millify from 'millify'
 import {Cryptocurrencies,News} from './';
 import { Link } from 'react-router-dom';
+import Loader from './Loader';
 
-const {Title} = Typography;
+const {Text,Title} = Typography;
 
 const Home = () => {
     const { data, isFetching} = useGetCryptosQuery(10);
     const globalStat = data?.data?.stats;
 
-    if(isFetching) return 'Loading...';
-    console.log(data);
+    if(isFetching) return <Loader/>;
+    
   return (
     <div>
         <Title level={2} className='heading'>Global Crypto Stats</Title>
@@ -26,13 +27,13 @@ const Home = () => {
 
         <div className='home-heading-container'>
             <Title level={2} className='home-title'>Top 10 Cryptocurrencies in the world</Title>
-            <Title level={3} className='show-more'><Link to='/cryptocurrencies'>Show More</Link></Title>
+            <Text level={3} className='show-more'><Link to='/cryptocurrencies'>Show More</Link></Text>
         </div>
         <Cryptocurrencies simplified={true}/>
 
         <div className='home-heading-container'>
             <Title level={2} className='home-title'>Latest Crypto News</Title>
-            <Title level={3} className='show-more'><Link to='/news'>Show More</Link></Title>
+            <Text level={3} className='show-more'><Link to='/news'>Show More</Link></Text>
         </div>
         <News simplified={true}/>
     </div>

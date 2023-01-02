@@ -17,11 +17,19 @@ const baseUrl = 'https://coinranking1.p.rapidapi.com';
     endpoints: (builder) => ({
         getCryptos: builder.query({
             query: (count) => createrequest(`/coins?limit=${count}`)
-        })
+        }),
+        getCryptoDetails: builder.query({
+            query: (coinId) => createrequest(`/coin/${coinId}`)
+        }),
+        getCryptoHistory: builder.query({
+            query: ({coinId, timeperiod}) => createrequest(`/coin/${coinId}/history?timePeriod=${timeperiod}`)
+        }),
     })
  });
 
  //Redux hooks
  export const {
     useGetCryptosQuery,
+    useGetCryptoDetailsQuery,
+    useGetCryptoHistoryQuery
  } = cryptoApi;
