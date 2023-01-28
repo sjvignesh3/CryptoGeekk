@@ -1,0 +1,32 @@
+{
+    "theme_color": "#f69435",
+    "background_color": "#f69435",
+    "display": "standalone",
+    "scope": "https://cryptogeekk.netlify.app/",
+    "start_url": "https://cryptogeekk.netlify.app/",
+    "name": "Vigneshwaran J",
+    "short_name": "cgeek",
+    "description": "news",
+    "icons": [
+        {
+            "src": "images/transparent-logo1-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "images/transparent-logo1-256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "images/transparent-logo1-384.png",
+            "sizes": "384x384",
+            "type": "image/png"
+        },
+        {
+            "src": "images/transparent-logo1-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
