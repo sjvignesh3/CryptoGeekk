@@ -15,7 +15,7 @@ const Cryptocurrencies = ( {simplified} ) => {
   useEffect(() => {
     const filteredData = data?.data?.coins.filter((coin) => coin.name.toLowerCase().includes(searchItem.toLowerCase()));
     setCryptos(filteredData);
-  },[searchItem]);
+  },[searchItem,data?.data?.coins]);
 
   if(isFetching) return <Loader/>;
 
@@ -33,7 +33,7 @@ const Cryptocurrencies = ( {simplified} ) => {
             <Link to={`/crypto/${currency.uuid}`}>
               <Card 
                   title={`${currency.rank}. ${currency.name}`}
-                  extra={<img className='crypto-image' src={currency.iconUrl}/>}
+                  extra={<img className='crypto-image' src={currency.iconUrl} alt=""/>}
                   hoverable
                   >
                   <p>Price : {millify(currency.price)}</p>

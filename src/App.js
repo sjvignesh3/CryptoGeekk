@@ -3,7 +3,7 @@ import { Routes, Route, Link } from 'react-router-dom';
 import { Layout, Typography, Space } from 'antd';
 import {Navbar,Home,Exchanges,CryptoDetails,Cryptocurrencies,News} from './components' 
 import './App.css'
-import Title from 'antd/es/skeleton/Title';
+
 
 function App() {
   return (
@@ -36,7 +36,7 @@ function App() {
           <Link to='/news'>News</Link>
         </Space>
         <br/><br/>
-        <Typography.Title level={5} style={{color:'white', textAlign:'center'}} >Site Crafted by <a href="https://www.linkedin.com/in/vigneshwaran3/" rel='noreferer' target='_blank'>Vigneshwaran J ❤</a></Typography.Title>
+        <Typography.Title level={5} style={{color:'white', textAlign:'center'}} >Site Crafted by <a href="https://www.linkedin.com/in/vigneshwaran3/" rel='noreferrer' target='_blank'>Vigneshwaran J ❤</a></Typography.Title>
         </div>
       </div>
     </div>

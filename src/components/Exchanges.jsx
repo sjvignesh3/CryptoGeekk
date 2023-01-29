@@ -8,7 +8,7 @@ const {Panel} = Collapse;
 const {Text} = Typography;
 
 const Exchanges = () => {
-  const {data,isfetching} = useGetExchangesQuery();
+  const {data} = useGetExchangesQuery();
   if(!data) return <Loader/>;
   console.log(data);
   return (
@@ -38,7 +38,7 @@ const Exchanges = () => {
         <p>Established Year : {exc.year_established}</p>
         <p>Normalized 24h Trade Volume : {millify(exc.trade_volume_24h_btc_normalized)}</p>
         <p>Rank based on Trust : {exc.trust_score_rank}</p>
-        <a href={exc.url} target='_blank' rel='norefferer'>Official Site</a>
+        <a href={exc.url} target='_blank' rel='noreferrer'>Official Site</a>
       </Panel>
       ))}
     </Collapse>
