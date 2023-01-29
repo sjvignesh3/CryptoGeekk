@@ -2,8 +2,8 @@
     "theme_color": "#f69435",
     "background_color": "#f69435",
     "display": "standalone",
-    "scope": "https://cryptogeekk.netlify.app/",
-    "start_url": "https://cryptogeekk.netlify.app/",
+    
+    "start_url": ".",   
     "name": "Vigneshwaran J",
     "short_name": "cgeek",
     "description": "news",
